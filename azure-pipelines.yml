@@ -1,4 +1,9 @@
 trigger:
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/kube-manifests'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 - master
 
 variables:
